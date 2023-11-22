@@ -3,6 +3,10 @@
         "import": "KeyProcessor"
     },
     {
-        "return": "True"
+        "True": [
+            {
+                "return": "True"
+            }
+        ]
     }
 ]

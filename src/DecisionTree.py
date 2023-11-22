@@ -34,7 +34,8 @@ class DecisionTree:
             return decision_tree_processing_result
         else:
             return_val = self.module_instances[self.current_module_name].process_key(key, value)
-            self.processing_result = self.module_instances[self.current_module_name].processing_result
+            if 'processing_result' in self.module_instances[self.current_module_name].__dict__:
+                self.processing_result = self.module_instances[self.current_module_name].processing_result
             return return_val
 
     def process_value(self, value):
