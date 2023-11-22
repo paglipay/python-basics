@@ -1,0 +1,24 @@
+[
+    {
+        "import": "KeyProcessor"
+    },
+    {
+        "True": [
+            {
+                "import": "KeyProcessor"
+            },
+            {
+                "False": "config1"
+            },
+            {
+                "True": "Hello World!1"
+            }
+        ]
+    },
+    {
+        "True": "Hello World!2"
+    },
+    {
+        "returnBol.json": "config.json"
+    }
+]
