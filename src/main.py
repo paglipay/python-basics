@@ -1,5 +1,6 @@
 import json
 from DecisionTree import DecisionTree
+import pprint as pp
 
 # Read the JSON document
 with open('processors.json', 'r') as f:
@@ -8,4 +9,5 @@ with open('processors.json', 'r') as f:
 # Create a DTree instance and process the config
 data = {'test': 'test'}
 decisionTree = DecisionTree(config, data=data)
-print(data)
+print("OUTPUT HERE:")
+pp.pprint(data)

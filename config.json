@@ -1,22 +1,57 @@
-{
-    "jobs": [
-        {
-            "name": "TextProcessor",
-            "data": "hello world",
-            "jobs": [
-                {
-                    "name": "TextProcessor",
-                    "data": "nested hello in config"
+[
+    {
+        "import": "KeyProcessor"
+    },
+    {
+        "True": "HELLO KeyProcessor config"
+    },
+    {
+        "False": "processors.json"
+    },
+    {
+        "processors": [
+            {
+                "name": "KeyProcessor",
+                "data": {
+                    "TEST": "config HERE-A"
                 },
-                {
-                    "name": "NumberProcessor",
-                    "data": 21
-                }
-            ]
-        },
-        {
-            "name": "NumberProcessor",
-            "data": 42
-        }
-    ]
-}
+                "jobs": [
+                    {
+                        "import": "KeyProcessor"
+                    },
+                    {
+                        "True": "HELLO KeyProcessor222"
+                    },
+                    {
+                        "processors": [
+                            {
+                                "name": "KeyProcessor",
+                                "data": {
+                                    "TEST": "config HERE-A2"
+                                },
+                                "processors": [
+                                    {
+                                        "name": "TextProcessor",
+                                        "data": "config nested hello in config"
+                                    },
+                                    {
+                                        "name": "NumberProcessor",
+                                        "data": 111
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "NumberProcessor",
+                                "data": 222
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "NumberProcessor",
+                "data": 333
+            }
+        ]
+    }
+]

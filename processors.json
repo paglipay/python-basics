@@ -3,25 +3,55 @@
         "import": "KeyProcessor"
     },
     {
-        "True": [
-            {
-                "import": "KeyProcessor"
-            },
-            {
-                "True": "config1"
-            },
-            {
-                "True": "Hello World!1"
-            }
-        ]
-    },
-    {
-        "True": "Hello World!2"
+        "True": "HELLO KeyProcessor"
     },
     {
         "returnBol.json": "config.json"
     },
     {
-        "returnBol.json": "config123"
+        "processors": [
+            {
+                "name": "KeyProcessor",
+                "data": {
+                    "TEST": "HERE-A"
+                },
+                "jobs": [
+                    {
+                        "import": "KeyProcessor"
+                    },
+                    {
+                        "True": "HELLO KeyProcessor222"
+                    },
+                    {
+                        "processors": [
+                            {
+                                "name": "KeyProcessor",
+                                "data": {
+                                    "TEST": "HERE-A2"
+                                },
+                                "processors": [
+                                    {
+                                        "name": "TextProcessor",
+                                        "data": "nested hello in config"
+                                    },
+                                    {
+                                        "name": "NumberProcessor",
+                                        "data": 11
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "NumberProcessor",
+                                "data": 22
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "NumberProcessor",
+                "data": 33
+            }
+        ]
     }
 ]

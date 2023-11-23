@@ -1,3 +1,5 @@
+import pprint as pp
+
 class KeyProcessor:
     def __init__(self, name, data={}):
         self.processor_name = name
@@ -15,7 +17,13 @@ class KeyProcessor:
                 self.processing_result = True
             elif value == 'False':
                 self.processing_result = False
-        elif 'jobs' in config_string or 'processors' in config_string:
+        elif config_string == 'jobs':
+            # config_boolean = True
+            from DecisionTree import DecisionTree
+            # data = {'test': 'test'}
+            print('DecisionTree HERE:', value)
+            decisionTree = DecisionTree(value, data=self.data)
+        elif config_string == 'processors':
             config_boolean = True
             for processor in value:
                 module_name = processor['name']
@@ -31,3 +39,12 @@ class KeyProcessor:
         print('Processing value: ', value)
         self.data[self.processor_name].append(value)
         return True
+    
+    def process(self, value):
+        print('Processing process value: ')
+        pp.pprint(value)
+        return value
+        # self.data[self.processor_name].append(value)       
+        
+        # print('PROCESSED process value:')
+        # pp.pprint(value)
