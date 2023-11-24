@@ -1,14 +1,40 @@
 [
     {
-        "import": "TextProcessor"
+        "enable": true,
+        "name": "NumberProcessor",
+        "data": {
+            "value": 11
+        }
     },
     {
-        "False": "TEXT_TEST-2-B.yml"
+        "enable": true,
+        "name": "NumberProcessor",
+        "data": {
+            "value": 22
+        }
     },
     {
-        "True": "config.json"
+        "enable": true,
+        "name": "YamlProcessor",
+        "data": {
+            "open": "TEXT_TEST.json",
+            "save_as": "TEXT_TEST-B.yml"
+        }
     },
     {
-        "returnBol.json": "config.json"
+        "enable": true,
+        "name": "JsonProcessor",
+        "data": {
+            "open": "TEXT_TEST-B.yml",
+            "save_as": "TEXT_TEST-2-B.json"
+        }
+    },
+    {
+        "enable": false,
+        "name": "YamlProcessor",
+        "data": {
+            "open": "TEXT_TEST-2-B.json",
+            "save_as": "TEXT_TEST-2-B.yml"
+        }
     }
 ]

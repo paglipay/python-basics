@@ -13,46 +13,7 @@
                 "data": {
                     "value": "config HERE-A2"
                 },
-                "processors": [
-                    {
-                        "enable": true,
-                        "name": "NumberProcessor",
-                        "data": {
-                            "value": 11
-                        }
-                    },
-                    {
-                        "enable": true,
-                        "name": "NumberProcessor",
-                        "data": {
-                            "value": 22
-                        }
-                    },
-                    {
-                        "enable": true,
-                        "name": "YamlProcessor",
-                        "data": {
-                            "open": "TEXT_TEST.json",
-                            "save_as": "TEXT_TEST-B.yml"
-                        }
-                    },
-                    {
-                        "enable": true,
-                        "name": "JsonProcessor",
-                        "data": {
-                            "open": "TEXT_TEST-B.yml",
-                            "save_as": "TEXT_TEST-2-B.json"
-                        }
-                    },
-                    {
-                        "enable": false,
-                        "name": "YamlProcessor",
-                        "data": {
-                            "open": "TEXT_TEST-2-B.json",
-                            "save_as": "TEXT_TEST-2-B.yml"
-                        }
-                    }
-                ]
+                "processors": "processors.json"
             },
             {
                 "enable": false,

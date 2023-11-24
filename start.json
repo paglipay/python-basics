@@ -1,0 +1,14 @@
+[
+    {
+        "import": "TextProcessor"
+    },
+    {
+        "False": "TEXT_TEST-2-B.yml"
+    },
+    {
+        "True": "config.json"
+    },
+    {
+        "returnBol.json": "config.json"
+    }
+]
