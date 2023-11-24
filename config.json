@@ -6,52 +6,87 @@
         "True": "HELLO KeyProcessor config"
     },
     {
-        "False": "processors.json"
-    },
-    {
         "processors": [
             {
-                "name": "KeyProcessor",
+                "enable": true,
+                "name": "TextProcessor",
                 "data": {
-                    "TEST": "config HERE-A"
+                    "value": "config HERE-A2"
                 },
-                "jobs": [
+                "processors": [
                     {
-                        "import": "KeyProcessor"
+                        "enable": true,
+                        "name": "NumberProcessor",
+                        "data": {
+                            "value": 11
+                        }
                     },
                     {
-                        "True": "HELLO KeyProcessor222"
+                        "enable": true,
+                        "name": "NumberProcessor",
+                        "data": {
+                            "value": 22
+                        }
                     },
                     {
-                        "processors": [
-                            {
-                                "name": "KeyProcessor",
-                                "data": {
-                                    "TEST": "config HERE-A2"
-                                },
-                                "processors": [
-                                    {
-                                        "name": "TextProcessor",
-                                        "data": "config nested hello in config"
-                                    },
-                                    {
-                                        "name": "NumberProcessor",
-                                        "data": 111
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "NumberProcessor",
-                                "data": 222
-                            }
-                        ]
+                        "enable": true,
+                        "name": "YamlProcessor",
+                        "data": {
+                            "open": "TEXT_TEST.json",
+                            "save_as": "TEXT_TEST-B.yml"
+                        }
+                    },
+                    {
+                        "enable": true,
+                        "name": "JsonProcessor",
+                        "data": {
+                            "open": "TEXT_TEST-B.yml",
+                            "save_as": "TEXT_TEST-2-B.json"
+                        }
+                    },
+                    {
+                        "enable": false,
+                        "name": "YamlProcessor",
+                        "data": {
+                            "open": "TEXT_TEST-2-B.json",
+                            "save_as": "TEXT_TEST-2-B.yml"
+                        }
                     }
                 ]
             },
             {
-                "name": "NumberProcessor",
-                "data": 333
+                "enable": false,
+                "name": "YamlProcessor",
+                "data": {
+                    "open": "TEXT_TEST.json",
+                    "save_as": "TEXT_TEST.yml"
+                }
+            },
+            {
+                "enable": false,
+                "name": "JsonProcessor",
+                "data": {
+                    "open": "TEXT_TEST.yml",
+                    "save_as": "TEXT_TEST-2.json"
+                }
+            },
+            {
+                "enable": false,
+                "name": "YamlProcessor",
+                "data": {
+                    "open": "TEXT_TEST-2.json",
+                    "save_as": "TEXT_TEST-2.yml"
+                }
+            },
+            {
+                "enable": false,
+                "name": "YamlProcessor",
+                "data": {
+                    "open": "C:/Users/Paul/Documents/Projects/DTree/dist/Desktop/br00f2n.luskin.ucla.net.json",
+                    "save_as": "C:/Users/Paul/Documents/Projects/DTree/dist/Desktop/br00f2n.luskin.ucla.net.yml"
+                }
             }
+            
         ]
     }
 ]

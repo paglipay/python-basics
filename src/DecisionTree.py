@@ -1,4 +1,4 @@
-import json
+import json, yaml
 import sys
 
 class DecisionTree:
@@ -32,6 +32,7 @@ class DecisionTree:
             decision_tree_processing_result = decision_tree.processing_result
             print('Decision tree processing result: ', decision_tree_processing_result)
             return decision_tree_processing_result
+        
         else:
             return_val = self.module_instances[self.current_module_name].process_key(key, value)
             if 'processing_result' in self.module_instances[self.current_module_name].__dict__:
@@ -44,6 +45,17 @@ class DecisionTree:
                 decision_tree = DecisionTree(self.data[value], value, self.module_instances, self.current_module_name, self.data)
             else:
                 decision_tree = DecisionTree(json.load(open(value)), value, self.module_instances, self.current_module_name, self.data)
+            return decision_tree.processing_result
+        
+        if '.yml' in value:
+            if value in self.data:
+                data = yaml.safe_load(self.data[value])
+                decision_tree = DecisionTree(data, value, self.module_instances, self.current_module_name, self.data)
+            else:                
+                with open(value, 'r') as yaml_file:
+                    data = yaml.safe_load(yaml_file)
+                    print('YML data: ', data)
+                decision_tree = DecisionTree(data, value, self.module_instances, self.current_module_name, self.data)
             return decision_tree.processing_result
         else:
             return self.module_instances[self.current_module_name].process_value(value)

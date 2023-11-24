@@ -1,0 +1,88 @@
+{
+    "value": {
+        "value": {
+            "value": [
+                {
+                    "import": "KeyProcessor"
+                },
+                {
+                    "True": "HELLO KeyProcessor config"
+                },
+                {
+                    "processors": [
+                        {
+                            "name": "TextProcessor",
+                            "data": {
+                                "value": "config HERE-A2"
+                            },
+                            "processors": [
+                                {
+                                    "name": "NumberProcessor",
+                                    "data": {
+                                        "value": 11
+                                    }
+                                },
+                                {
+                                    "name": "NumberProcessor",
+                                    "data": {
+                                        "value": 22
+                                    }
+                                },
+                                {
+                                    "name": "YamlProcessor",
+                                    "data": {
+                                        "open": "TEXT_TEST.json",
+                                        "save_as": "TEXT_TEST-B.yml"
+                                    }
+                                },
+                                {
+                                    "name": "JsonProcessor",
+                                    "data": {
+                                        "open": "TEXT_TEST-B.yml",
+                                        "save_as": "TEXT_TEST-2-B.json"
+                                    }
+                                },
+                                {
+                                    "name": "YamlProcessor",
+                                    "data": {
+                                        "open": "TEXT_TEST-2-B.json",
+                                        "save_as": "TEXT_TEST-2-B.yml"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "name": "YamlProcessor",
+                            "data": {
+                                "open": "TEXT_TEST.json",
+                                "save_as": "TEXT_TEST.yml"
+                            }
+                        },
+                        {
+                            "name": "JsonProcessor",
+                            "data": {
+                                "open": "TEXT_TEST.yml",
+                                "save_as": "TEXT_TEST-2.json"
+                            }
+                        },
+                        {
+                            "name": "YamlProcessor",
+                            "data": {
+                                "open": "TEXT_TEST-2.json",
+                                "save_as": "TEXT_TEST-2.yml"
+                            }
+                        },
+                        {
+                            "enable": false,
+                            "name": "YamlProcessor",
+                            "data": {
+                                "open": "C:/Users/Paul/Documents/Projects/DTree/dist/Desktop/br00f2n.luskin.ucla.net.json",
+                                "save_as": "C:/Users/Paul/Documents/Projects/DTree/dist/Desktop/br00f2n.luskin.ucla.net.yml"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
